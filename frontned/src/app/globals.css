@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ---- surfaces & ink ---- */
+  --color-ink: #16231f;
+  --color-ink-soft: #3c4a43;
+  --color-ink-faint: #6b766f;
+  --color-paper: #f1f3ee;
+  --color-surface: #ffffff;
+  --color-line: #dee3db;
+  --color-line-strong: #c7cec3;
+
+  /* ---- brand ---- */
+  --color-brand: #1f6f6b;
+  --color-brand-ink: #143f3d;
+  --color-brand-soft: #e3edec;
+
+  /* ---- secondary accent ---- */
+  --color-brass: #c98a3e;
+  --color-brass-soft: #f4e8d3;
+
+  /* ---- semantic ---- */
+  --color-danger: #b5573a;
+  --color-danger-soft: #f5e2da;
+  --color-success: #2e7d63;
+  --color-success-soft: #e2ede8;
+
+  /* ---- pipeline stations ---- */
+  --color-status-lead: #8a8f87;
+  --color-status-lead-soft: #eaece8;
+  --color-status-onboarding: #c98a3e;
+  --color-status-onboarding-soft: #f4e8d3;
+  --color-status-active: #2e7d63;
+  --color-status-active-soft: #e2ede8;
+  --color-status-hold: #b5573a;
+  --color-status-hold-soft: #f5e2da;
+  --color-status-closed: #5b6660;
+  --color-status-closed-soft: #e6e9e5;
+
+  /* ---- type ---- */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
+  --font-mono: var(--font-plex-mono);
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-brand);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-line-strong);
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes rail-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
