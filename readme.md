@@ -293,14 +293,14 @@ _Run `npm test` in `backend/` to reproduce these results directly._
 | Add client form | `docs/screenshots/05-new-client.png` |
 | Team page (Admin only) | `docs/screenshots/06-team.png` |
 
-<!--
+
 ![Login](./docs/screenshots/01-login.png)
 ![Dashboard](./docs/screenshots/02-dashboard.png)
 ![Clients List](./docs/screenshots/03-clients-list.png)
 ![Client Detail](./docs/screenshots/04-client-detail.png)
 ![New Client](./docs/screenshots/05-new-client.png)
 ![Team](./docs/screenshots/06-team.png)
--->
+
 
 _Uncomment the image block above once the files are added._
 
