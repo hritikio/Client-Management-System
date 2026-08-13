@@ -302,12 +302,6 @@ _Run `npm test` in `backend/` to reproduce these results directly._
 ![Team](./docs/screenshots/06-team.png)
 
 
-_Uncomment the image block above once the files are added._
-
-A short demo video (2–3 minutes) covering login → create client → move it
-through the pipeline → add a note → check the dashboard is an equally valid
-substitute per the assessment brief — link it here if recorded instead.
-
 ## Deployment
 
 Not required for local evaluation, but the app is structured to deploy
