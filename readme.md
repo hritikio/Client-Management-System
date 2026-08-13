@@ -117,7 +117,7 @@ client-management-system/
 
 ### 1. Clone
 ```bash
-git clone <this-repo-url>
+git clone https://github.com/hritikio/Client-Management-System.git
 cd client-management-system
 ```
 
@@ -211,8 +211,8 @@ erDiagram
     }
 ```
 
-_(GitHub renders this diagram automatically. Full model source:
-[`backend/prisma/schema.prisma`](./backend/prisma/schema.prisma).)_
+Full model source:
+[`backend/prisma/schema.prisma`](./backend/prisma/schema.prisma)
 
 **Enforced pipeline transitions** (`backend/src/lib/validators.ts`):
 ```

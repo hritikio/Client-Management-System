@@ -4,12 +4,17 @@ import { createNoteSchema } from "../lib/validators";
 import { AppError } from "../middleware/errorHandler";
 
 // POST /api/clients/:clientId/notes
-export async function createNote(req: Request, res: Response, next: NextFunction) {
+export async function createNote(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
   try {
     const { content } = createNoteSchema.parse(req.body);
+    const clientId = req.params.clientId as string;
 
     const client = await prisma.client.findUnique({
-      where: { id: req.params.clientId },
+      where: { id: clientId },
     });
 
     if (!client) {
@@ -36,10 +41,16 @@ export async function createNote(req: Request, res: Response, next: NextFunction
 }
 
 // GET /api/clients/:clientId/notes
-export async function getNotes(req: Request, res: Response, next: NextFunction) {
+export async function getNotes(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
   try {
+    const clientId = req.params.clientId as string;
+
     const client = await prisma.client.findUnique({
-      where: { id: req.params.clientId },
+      where: { id: clientId },
     });
 
     if (!client) {
@@ -51,7 +62,7 @@ export async function getNotes(req: Request, res: Response, next: NextFunction) 
     }
 
     const notes = await prisma.note.findMany({
-      where: { clientId: req.params.clientId },
+      where: { clientId },
       include: { author: { select: { id: true, name: true } } },
       orderBy: { createdAt: "desc" },
     });
